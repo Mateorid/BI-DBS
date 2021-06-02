@@ -1,0 +1,21 @@
+0)	zvire (druh = 'opice' ∨  druh = 'slon')
+
+1)opcie "Azor": zvire (druh = 'opice' ∧ jmeno_zvirete ='Azor')
+
+2)	{osetrovatel [id_osetrovatele = id_kmotra] zvire}[jmeno_osetrovatele->jmeno, plat]
+
+3)	{krmeni * zvire} [ jmeno_zvirete]
+
+4)	zvire(druh = 'opice' ∧ jmeno_zvirete ='Azor') *> krmeni(datum ='1.4.2015') *> osetrovatel
+
+5)zvirata ktera byla nakrmena: krmeni *> zvire
+
+6)	zvire(druh = 'opice' ∧ jmeno_zvirete = 'Azor') [id_osetrovatele = id_kmotra> osetrovatel
+
+7) {zvire(druh='opice')*>krmeni*>osetrovatel} ∪ {zvire(druh='slon')*>krmeni*>osetrovatel}
+
+8) {zvire(druh='opice')*>krmeni*>osetrovatel} ∩ {zvire(druh='slon')*>krmeni*>osetrovatel}
+
+9) {zvire(druh='opice')*>krmeni*>osetrovatel} \ {zvire(druh='slon')*>krmeni*>osetrovatel}
+
+10) krmeni !*> zvire
